@@ -1,0 +1,88 @@
+==================================================================
+https://keybase.io/awbauer
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://awbauer.dev
+  * I am awbauer (https://keybase.io/awbauer) on keybase.
+  * I have a public key with fingerprint 004B A83E 4500 18E4 529C  B37A 89B5 3E0F 8F55 A85E
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120a705a42e625bdbd9d4f7ffa6c65d94befeaa4ff434d5042dff3747c8e5809adb0a",
+      "fingerprint": "004ba83e450018e4529cb37a89b53e0f8f55a85e",
+      "host": "keybase.io",
+      "key_id": "89b53e0f8f55a85e",
+      "kid": "01012d23aca939f2008d0168dda806f23e8b9f37c93ac9c9564b7876c23342e4d2d60a",
+      "uid": "4db3fcb15311beac0481de54113e4219",
+      "username": "awbauer"
+    },
+    "merkle_root": {
+      "ctime": 1555169202,
+      "hash_meta": "41322335c05d07830da6eec4b598f03c8667533d0857f2f88cd6a5624bf42d37",
+      "seqno": 5160759
+    },
+    "revoke": {
+      "sig_ids": [
+        "43551a18cac5a9c4763cf30c2dffbf324b3da18547fb3ab738325c74f571ca5a0f"
+      ]
+    },
+    "service": {
+      "hostname": "awbauer.dev",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1555169216,
+  "expire_in": 157680000,
+  "prev": "e1de3bed37ffc2a6a463d9534f9c2e26fd37ce145cb034e2d4b2b77c830259b3",
+  "seqno": 36,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.0
+Comment: https://keybase.io/crypto
+
+yMP7AnicbVN5bFRFHN5aIaHYFLcWIigNDykS1nbem5l3rARURBE8IgIWOZaZeTPt
+Zulu+3bbCpUq1KMUKihGQLAalKNF7qOckYK2VUQuDWlRKytXTKVQbAo0ovMaidH4
+/pm8+X3zfd/v+818kZzoSUpYsHNkyuJJ62ckHDkUK/RM2/rnwRKFRuzZir9ECfHu
+hc+yeTQWCAVtxa8AVQPEAJggjesapja1LRsJQwiiMx3bFqJccEKQEAgiGwOk2UJA
+AxnM5NgEFrEpIIpPEcFwDnfynWA45tICRIkJOcIAqKZcNItRaBDTohhyIEyBMTEx
+lwdzI1H3hDRHSZRnBiNyT/4Euu39D/62b+nc1iBhxIKW0AAwbaDqpm0TE+hCg9yk
+lvTJLAmxmIV1RA3T0JkGoWwV2Zqtd/su7KZDNoWCURVDVaWcMIBM1eYYqarsQVMt
+FxjlTpjkcYkmxZQUckeZ61PyuBOaxQNOJBJzs2WxoItQMcaqbmlAk/2RaG4gj8eI
+K6NCTRrADGAbGCYENtE5Z4hiyxQAMlPXDQyhDUxsCE2YJrN1gnUNUSFzh4a0EeUF
+4Yjil/TAwJZ04PCiSIi74tFgjkwtqvinKghKA0Q1GWGYWAwZOmQCAuYOjwooCaEt
+yxgZgkJCDWhCDTMDCWyojGAChDJ9rivmFAVZN7k7pn+3n2nzImko34nEIiwySxZy
+Y7H8qN+NJTY730UWcxr4myNAg2Fb3hF5oog70WAkLGOSyP8kpuo+hb+cH3R4IOgi
+sKGbQH6ujpTzK1zOBVIuwxCCaUQnSIe2hSESFtO4pgtZYVxFmFEAEddsRDVqyNsK
+gYYtCv+JEEqpGMmRnDK4MIkVOlyZe6hu2p2ehCRPzx53uI/Hk9Srz+0nVe7p4/no
+cPqLE8I91ar23DVVv/6WXeHduGdJF8MPPult+vLw+y3OhjmbdxSm3BM/fan+wIpQ
+76uPXKkbuvA+lBZd589pKF3wzJhWMGTeZxOOrR5wddfjlfM7+vULriyofiN91+pr
+9e2jfUbk3vfKxq3owhc/vJh67ej1T5dmnTmY/m7/+sMdw1qdmvWe6XeZe7fEfc8P
+Sh2vlmfS9Teuln/ScHzG5SPL2roeqz1/q27goIETn06e3PhzlWd/6RWSfX4wndQU
+O4BGt7y18lTTpUXe1s5RY385edNu/rp48OIPhp9OX1VwPr9y3/yauuabu6sL876n
+F9/0laxM3H8us2/07O8FiWee2F21YXLXkoajCVP8nx8YsK///J0NoeQp9RPTDy7/
+pnVcckHFtrKmTd9V9MrS2uluv28dq3m9E6/z5bbUDt3EHzjmsZZpGd5tI8fEy8bP
+LHho6ezycaGZvVN4Zad3XnP1cylZD2ff+GHLnKavMv94tufOyOT2PgnjM5u3F+/Y
+U90j6YURF2pFyulXQ1tTuhaWlg6nlaFjaSezNpWtSkvbtb13yY4fq8+lvpShXhgS
+a2NrP97T6H107P2H6N7R5UuPo45bT519ZUbpmhEd1rWG5eLyMDDqtYa06yc6vn3n
+6IB4W0bfeHxtW+2tvaf6n0hNPDNi49n6rAD37h/YuGjQ3RubEidkd855e+pPLTX5
+mxsz4jPn1YO/AEbVCu8=
+=LQiQ
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/awbauer
+
+==================================================================
