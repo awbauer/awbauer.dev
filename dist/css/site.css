@@ -7,7 +7,7 @@ body{
   background-color: #095079;
   color: #fffe;
 }
-h1 {
+h1{
   margin: auto;
   padding: 20px 0;
   font-size: 96px;
@@ -52,7 +52,7 @@ hr{
   padding:10px 10px 0;
   overflow: auto;
 }
-.grid {
+.grid{
   text-align: center;
   width:90%;
   max-width:800px;
@@ -69,11 +69,11 @@ hr{
 .details{
   padding:20px 0;
 }
-.social {
+.social{
   max-width: 400px;
   margin: auto;
 }
-.social ul {
+.social ul{
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   display: grid;
@@ -118,15 +118,8 @@ hr{
   h1{
     font-size:4.5rem;
   }
-  .social ul {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
   .social li{
     padding:20px;
-  }
-  .social li:last-child{
-    grid-column: 1 / 3;
   }
   .divider{
     display: block;
