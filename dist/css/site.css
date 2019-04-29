@@ -129,6 +129,9 @@ hr{
   .desc{
     margin: 16px 0 20px;
   }
+  .portfolio-blocks{
+    grid-gap: 10px;
+  }
 }
 @media (min-width:520px){
   .portfolio-blocks{
