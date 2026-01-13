@@ -8,14 +8,15 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}main{display:b
   --color-text-muted: #e4e4e4;
   --color-link: rgb(255, 193, 157);
   --color-focus: #d4d4d4;
-  --font-body: 'Droid Sans', sans-serif;
-  --font-heading: 'Vidaloka', serif;
+  --font-body: 'Droid Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  --font-heading: 'Vidaloka', Georgia, serif;
 }
 
 body {
   font-family: var(--font-body);
   background-color: var(--color-primary);
   color: var(--color-text);
+  font-display: swap;
 }
 
 h1 {

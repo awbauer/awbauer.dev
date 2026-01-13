@@ -26,8 +26,9 @@
   <link rel="preconnect" href="https://res.cloudinary.com">
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Droid+Sans&family=Vidaloka&display=swap" rel="stylesheet">
+  <!-- Fonts (async loaded to not block rendering) -->
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Droid+Sans&family=Vidaloka&display=swap">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Droid+Sans&family=Vidaloka&display=swap" rel="stylesheet"></noscript>
 
   <!-- Styles -->
   <link href="dist/css/site.css" rel="stylesheet">
@@ -217,54 +218,12 @@
 
   <!-- Progressive enhancement: WebP + srcset support -->
   <script>
-    (function() {
-      'use strict';
-
-      const cdnBase = 'https://res.cloudinary.com/awb/image/upload/';
-      const cdnOpts = 'c_fill,g_auto,q_auto:good';
-
-      // Test for WebP support
-      function supportsWebP() {
-        const canvas = document.createElement('canvas');
-        if (canvas.getContext && canvas.getContext('2d')) {
-          return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
-        }
-        return false;
-      }
-
-      // Enhance images with WebP and srcset
-      function enhanceImages() {
-        const webp = supportsWebP();
-        const images = document.querySelectorAll('img[data-cdn-img]');
-
-        if (!webp) return; // No enhancement needed if WebP not supported
-
-        images.forEach(function(img) {
-          const cdnImg = img.dataset.cdnImg;
-          const ext = '.webp';
-
-          // Upgrade to WebP with srcset for retina displays
-          img.src = cdnBase + cdnOpts + ',h_300,w_400/' + cdnImg + ext;
-          img.srcset = cdnBase + cdnOpts + ',h_600,w_800/' + cdnImg + ext + ' 2x';
-        });
-      }
-
-      // Enhance images when DOM is ready
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', enhanceImages);
-      } else {
-        enhanceImages();
-      }
-    })();
+!function(){'use strict';const e='https://res.cloudinary.com/awb/image/upload/',t='c_fill,g_auto,q_auto:good';function n(){const e=document.createElement('canvas');return!(!e.getContext||!e.getContext('2d'))&&0===e.toDataURL('image/webp').indexOf('data:image/webp')}function i(){if(!n())return;document.querySelectorAll('img[data-cdn-img]').forEach(function(n){const i=n.dataset.cdnImg;n.src=e+t+',h_300,w_400/'+i+'.webp',n.srcset=e+t+',h_600,w_800/'+i+'.webp 2x'})}'loading'===document.readyState?document.addEventListener('DOMContentLoaded',i):i()}();
   </script>
 
-  <!-- Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B5MLK26YFL"></script>
+  <!-- Analytics (deferred to after page load) -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-B5MLK26YFL');
+window.addEventListener('load',function(){var a=document.createElement('script');a.src='https://www.googletagmanager.com/gtag/js?id=G-B5MLK26YFL',a.async=!0,document.head.appendChild(a),window.dataLayer=window.dataLayer||[],window.gtag=function(){dataLayer.push(arguments)},gtag('js',new Date),gtag('config','G-B5MLK26YFL')});
   </script>
 </body>
 </html>

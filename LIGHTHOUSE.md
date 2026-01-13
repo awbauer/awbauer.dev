@@ -14,12 +14,12 @@ The GitHub Actions workflow (`.github/workflows/lighthouse.yml`) runs Lighthouse
 
 ## Score Thresholds
 
-Builds will **fail** if any of these minimum scores aren't met:
+Builds will **warn** if any of these minimum scores aren't met:
 
-- **Performance**: 90/100
-- **Accessibility**: 90/100
-- **Best Practices**: 90/100
-- **SEO**: 90/100
+- **Performance**: 85/100
+- **Accessibility**: 95/100
+- **Best Practices**: 95/100
+- **SEO**: 95/100
 
 ## Performance Budgets
 
@@ -27,21 +27,21 @@ The following budgets are enforced (warnings, not failures):
 
 | Resource Type | Budget |
 |--------------|--------|
-| HTML Document | 30 KB |
-| CSS | 20 KB |
-| JavaScript | 50 KB |
-| Fonts | 100 KB |
+| HTML Document | 20 KB |
+| CSS | 15 KB |
+| JavaScript | 30 KB (minified) |
+| Fonts | 80 KB |
 | Images | 500 KB |
-| **Total** | **1 MB** |
+| **Total** | **800 KB** |
 
 ### Core Web Vitals Budgets
 
 | Metric | Budget |
 |--------|--------|
-| First Contentful Paint (FCP) | 2.0s |
+| First Contentful Paint (FCP) | 1.8s |
 | Largest Contentful Paint (LCP) | 2.5s |
 | Cumulative Layout Shift (CLS) | 0.1 |
-| Total Blocking Time (TBT) | 300ms |
+| Total Blocking Time (TBT) | 200ms |
 
 ## Configuration
 
