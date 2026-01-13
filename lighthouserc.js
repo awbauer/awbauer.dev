@@ -3,10 +3,13 @@ module.exports = {
     collect: {
       // Serve the static site
       staticDistDir: './',
-      // Test the index page
-      url: ['http://localhost/index.html'],
+      // Test the index page (staticDistDir serves on random port, use relative path)
+      url: ['http://localhost/'],
       // Run 3 times to get median scores
       numberOfRuns: 3,
+      settings: {
+        chromeFlags: '--no-sandbox --disable-gpu',
+      },
     },
     assert: {
       // Set minimum scores for each category

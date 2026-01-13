@@ -22,28 +22,46 @@ jobs:
         run: npm install -g @lhci/cli@0.13.x
 
       - name: Run Lighthouse CI
-        run: lhci autorun --collect.settings.chromeFlags="--no-sandbox" || true
-        continue-on-error: true
-
-      - name: Check if Lighthouse results exist
-        id: check-results
+        id: lhci
         run: |
-          if [ -d ".lighthouseci" ] && [ "$(ls -A .lighthouseci)" ]; then
+          lhci autorun 2>&1 | tee lhci-output.log || echo "LHCI_FAILED=true" >> $GITHUB_OUTPUT
+          if [ -d ".lighthouseci" ] && [ "$(ls -A .lighthouseci 2>/dev/null)" ]; then
             echo "results_exist=true" >> $GITHUB_OUTPUT
           else
             echo "results_exist=false" >> $GITHUB_OUTPUT
           fi
+        continue-on-error: true
+
+      - name: Upload LHCI logs
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lhci-logs
+          path: lhci-output.log
+          retention-days: 7
+
+      - name: Debug - Show directory contents
+        if: always()
+        run: |
+          echo "=== Current directory ==="
+          ls -la
+          echo "=== .lighthouseci directory ==="
+          if [ -d ".lighthouseci" ]; then
+            ls -la .lighthouseci/
+          else
+            echo "Directory .lighthouseci does not exist"
+          fi
 
       - name: Upload Lighthouse results
         uses: actions/upload-artifact@v4
-        if: steps.check-results.outputs.results_exist == 'true'
+        if: steps.lhci.outputs.results_exist == 'true'
         with:
           name: lighthouse-results
           path: .lighthouseci/
           retention-days: 30
 
       - name: Comment PR with Lighthouse scores
-        if: github.event_name == 'pull_request' && steps.check-results.outputs.results_exist == 'true'
+        if: github.event_name == 'pull_request' && steps.lhci.outputs.results_exist == 'true'
         uses: actions/github-script@v7
         continue-on-error: true
         with:
