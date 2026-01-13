@@ -1,10 +1,8 @@
 module.exports = {
   ci: {
     collect: {
-      // Serve the static site
+      // Serve the static site from current directory
       staticDistDir: './',
-      // Test the index page (staticDistDir serves on random port, use relative path)
-      url: ['http://localhost/'],
       // Run 3 times to get median scores
       numberOfRuns: 3,
       settings: {
