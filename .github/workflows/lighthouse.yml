@@ -36,20 +36,7 @@ jobs:
 
       - name: Run Lighthouse CI
         id: lhci
-        run: |
-          echo "=== Running Lighthouse CI ==="
-          lhci autorun 2>&1 | tee lhci-output.log
-          LHCI_EXIT_CODE=$?
-          echo "LHCI exit code: $LHCI_EXIT_CODE"
-
-          echo "=== Checking for results ==="
-          if [ -d ".lighthouseci" ] && [ "$(ls -A .lighthouseci 2>/dev/null)" ]; then
-            echo "✓ Results directory exists and contains files"
-            echo "results_exist=true" >> $GITHUB_OUTPUT
-          else
-            echo "✗ Results directory missing or empty"
-            echo "results_exist=false" >> $GITHUB_OUTPUT
-          fi
+        run: lhci autorun 2>&1 | tee lhci-output.log
         continue-on-error: true
 
       - name: Upload LHCI logs
@@ -74,14 +61,15 @@ jobs:
 
       - name: Upload Lighthouse results
         uses: actions/upload-artifact@v4
-        if: steps.lhci.outputs.results_exist == 'true'
+        if: always()
         with:
           name: lighthouse-results
           path: .lighthouseci/
           retention-days: 30
+          if-no-files-found: warn
 
       - name: Comment PR with Lighthouse scores
-        if: github.event_name == 'pull_request' && steps.lhci.outputs.results_exist == 'true'
+        if: github.event_name == 'pull_request'
         uses: actions/github-script@v7
         continue-on-error: true
         with:
