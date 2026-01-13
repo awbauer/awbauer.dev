@@ -59,22 +59,19 @@ jobs:
             const formatScore = (score) => {
               const percentage = Math.round(score * 100);
               const emoji = percentage >= 90 ? '🟢' : percentage >= 50 ? '🟡' : '🔴';
-              return `${emoji} ${percentage}`;
+              return emoji + ' ' + percentage;
             };
 
-            const comment = `## 🔦 Lighthouse CI Results
-
-| Category | Score |
-|----------|-------|
-| Performance | ${formatScore(scores.performance)} |
-| Accessibility | ${formatScore(scores.accessibility)} |
-| Best Practices | ${formatScore(scores['best-practices'])} |
-| SEO | ${formatScore(scores.seo)} |
-
-[View detailed report](${results.htmlPath || 'See artifacts'})
-
----
-*Lighthouse CI run for commit ${context.sha.substring(0, 7)}*`;
+            const comment = '## 🔦 Lighthouse CI Results\n\n' +
+              '| Category | Score |\n' +
+              '|----------|-------|\n' +
+              '| Performance | ' + formatScore(scores.performance) + ' |\n' +
+              '| Accessibility | ' + formatScore(scores.accessibility) + ' |\n' +
+              '| Best Practices | ' + formatScore(scores['best-practices']) + ' |\n' +
+              '| SEO | ' + formatScore(scores.seo) + ' |\n\n' +
+              '[View detailed report](' + (results.htmlPath || 'See artifacts') + ')\n\n' +
+              '---\n' +
+              '*Lighthouse CI run for commit ' + context.sha.substring(0, 7) + '*';
 
             github.rest.issues.createComment({
               issue_number: context.issue.number,
